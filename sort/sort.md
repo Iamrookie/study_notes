@@ -46,7 +46,29 @@ public void swap(int a[] , int i, int j){
 
 2.选择排序
 
+原理：从数组的0到N-1位置找出一个最小的数放到0位置，然后从1到N-1位置找出一个最小的书放到1位置，依次进行下去。
 
+coding：
+
+public void selectionSort(int a[]){
+
+​    if( a == null || a.length < 2) return;
+
+​    for(int i = 0; i< a.length; i++){
+
+​        int minIndex = i;
+
+​        for(int j = i; j<a.length; j++){
+
+​                  minIndex = a[j] < a[j+1] ?  j : j+1; 
+
+​             }
+
+​          swap(a, j , j+1 ) ;
+
+​        }
+
+}
 
 3.插入排序
 
