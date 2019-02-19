@@ -41,3 +41,12 @@ public void swap(int a[] , int i, int j){
  a[j] = temp;
 
 }
+
+
+
+2.选择排序
+
+
+
+3.插入排序
+
