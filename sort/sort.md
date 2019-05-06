@@ -50,36 +50,25 @@ public void swap(int a[] , int i, int j){
 
 coding：
 
-```
-public static void selectionSort(int a[]) {
-        if (a == null || a.length < 2) return;
+public void selectionSort(int a[]){
 
-        for (int i = 0; i < a.length; i++) {
-            int minIndex = i;
-            //不写j=i，为了后面j的判断不越界
-            for (int j = i + 1; j < a.length; j++) {
-                minIndex = a[j] > a[j - 1] ? j - 1 : j;
-            }
-            swap(a, i, minIndex);
-        }
-    }
+​    if( a == null || a.length < 2) return;
+
+​    for(int i = 0; i< a.length; i++){
+
+​        int minIndex = i;
+
+​        for(int j = i; j<a.length; j++){
+
+​                  minIndex = a[j] < a[j+1] ?  j : j+1; 
+
+​             }
+
+​          swap(a, j , j+1 ) ;
+
+​        }
+
 }
-```
 
 3.插入排序
 
-原理：从数组的1位置开始(0位置就一个数字没人跟他比，默认已经有序)，1位置跟0位置比，0位置大，就交换0与1上的数，后续是2位置与1比然后1与0位置比，依次进行比较，就好比玩斗地主牌按小到到放，当拿到一张牌，依次跟左边的比较放到合适的位置。
-
-coding:
-
-```
-public static void insertSort(int a[]) {
-    if (a == null || a.length < 2) return;
-
-    for (int i = 1; i < a.length; i++) {
-        for (int j = i - 1; j >= 0 && a[j] > a[j + 1]; j--) {
-            swap(a, j, j + 1);
-        }
-    }
-}
-```
